@@ -1,3 +1,7 @@
+div.cardoverview {
+  display: flex;
+}
+
 .card-container {
   border: 1px solid black;
   width: 630px; /** 6.3 cm breit */
@@ -53,8 +57,41 @@ div.frame-header {
   padding-top: 15px;
 
 }
+
+h2.bump_text {
+ margin-left: 5px;
+ margin-right: 5px;
+}
+
+img.dice {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+img.dice.right {
+  margin-left: -10px;
+}
+
+img.dice.left {
+  margin-right: -10px;
+}
+
+.dice.box.right {
+  justify-content: flex-end
+}
+
+.dice.box.left {
+  justify-content: flex-start;
+}
+
 .dice.box {
   width: 50%;
+  display: flex;
+
+}
+.right {
+
 }
 
 
@@ -67,20 +104,28 @@ h1 {
   color: black;
   margin-left: 20px;
   text-transform: uppercase;
-  margin-top: 3;
 }
 h2.types {
   color: black;
-  margin-top: 2;
+  margin-top: 2px;
+  font-weight: bold;
+
+}
+div.types {
+  height: 50px;
 }
 
-h3 {
+div.dice {
+  height: 50px;
+}
+
+.abilityname {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
-p {
-  margin-bottom: 15px;
+.abilitytext {
+  margin-bottom: 0px;
   margin-right: 15px;
   line-height: 1.5;
 }
@@ -141,12 +186,17 @@ BORDERS
   border-radius: 18px/40px;
 }
 
+.bigserif {
+  font-weight: 800;
+  font-family: "Georgia", Georgia, serif;
+}
+
 .name
 {
-  font-size: 1.5em;
+  font-size: 1.9em;
   margin-left: 10px;
+  margin-top: 0;
   align-self: baseline;
-  font-weight: 600;
 }
 .types {
   font-size: 1.2em;
@@ -206,7 +256,7 @@ BORDERS
   margin: 25px 10px;
   background: #d3ded6;
   background-image: url(https://image.ibb.co/dFcNx7/tile_bg_2.jpg);
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: space-around;
   padding-left:6px;

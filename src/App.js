@@ -24,13 +24,20 @@ class App extends Component {
 
     render() {
         return (
+
             <React.Fragment>
+                <div className="cardoverview">
                 {
                     this.state.characters.map((character) => (
+
                         <Card character={character}/>
+
                     ))
+
                 }
+                </div>
             </React.Fragment>
+
         );
     }
 }

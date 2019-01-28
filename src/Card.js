@@ -11,15 +11,19 @@ class Card extends Component {
                 <div className='card-background'>
                     <div className='card-frame'>
                         <div id='dice'>
-                            <div id='dice_offense' className='dice box'>
-                                <img className='dice offensee' src={process.env.PUBLIC_URL + 'img/offense.png'}/>
+                            <div id='dice_offense' className='dice box left'>
+                                {this.dice(char.dice_defense, "orange", "left")}
+                                <h2 className="bump_text">{this.dice_bump(char.bump_offense)}</h2>
                             </div>
-                            <div id='dice_defense' className='dice box'>
-                                <img className='dice defense' src={process.env.PUBLIC_URL + 'img/defence.png'}/>
+
+                            <div id='dice_defense right' className='dice box right'>
+                                <h2 className="bump_text">{this.dice_bump(char.bump_defense)}</h2>
+                                {this.dice(char.dice_defense, "green", "right")}
+
                             </div>
                         </div>
                         <div className='frame-header'>
-                            <h1 className='name'>{char.name}</h1>
+                            <h1 className='name bigserif'>{char.name}</h1>
 
                         </div>
                         <div className='char-images'>
@@ -29,20 +33,18 @@ class Card extends Component {
                         </div>
 
 
-                        <div className='frame-type-line'>
+                        <div className='frame-type-line types'>
                             <div id='types'>
-                                <h2 className='types'>Rasse: {char.race}, Rang: {char.rank}, Fraktion: {char.fraction} </h2>
                             </div>
+                                <h2 className='types bigserif'>Rasse: {char.race}, Rang: {char.rank}, Fraktion: {char.fraction}, Zusatz: {char.addition} </h2>
 
 
                         </div>
 
                         <div className='frame-text-box'>
-                            <h3>{char.ability_name}</h3>
-                            <p className='description ftb-inner-margin'>
+                            <h3 className='abilityname'>Fähigkeit: "{char.ability_name}"</h3>
+                            <p className='abilitytext'>
                                 {char.ability_text}
-                                Wird der Dwarfclan Bondi von einer benachbarten Fliese aus angegriffen, erhält
-                                er <b>+1 Bonus </b> auf ein <b>OFF</b>ensives Würfelergebnis.
                             </p>
 
 
@@ -55,6 +57,20 @@ class Card extends Component {
             </div>
 
         );
+    }
+
+    dice(amount, color, position) {
+        var i = 0;
+        var indents = [];
+        while(i++ < amount) {
+            indents.push(<img className={"dice defense"} src={process.env.PUBLIC_URL + `img/${color}_die.ico`}/>);
+        }
+        return indents;
+    }
+    dice_bump(amount) {
+        if (amount > 0) {
+            return `+${amount}`
+        } else return "";
     }
 }
 

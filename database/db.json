@@ -18,7 +18,7 @@
       "swift": 0,
       "ranged": 0,
       "ability_name": "Heimstätter",
-      "ability_text": "+1 Bump OFF when assaulted from adjactent tile"
+      "ability_text": "+1 Bump OFF when assaulted from adjactent tile. I repeat +1 Bump OFF when assaulted from adjactent tile"
     },
     {
       "name": "Dwarfclan Stonethrower",
@@ -39,6 +39,26 @@
       "ranged": 2,
       "ability_name": "Entfernung",
       "ability_text": "Roll Single Die, 1-3 successful attack, 4-5 random tile is hit, roll dice which tile is hit. 4 side faces the stonetrower, 1 side the opponent."
+    },
+    {
+      "name": "Dwarfclan Hold Guardian",
+      "fraction": "Dwarfclan",
+      "race": "Dwarf",
+      "living": true,
+      "rank": "Soldier",
+      "addition": null,
+      "type": null,
+      "favourite_tile": "town",
+      "price": 7,
+      "dice_offense": 2,
+      "dice_defense": 2,
+      "bump_offense": 0,
+      "bump_defense": 1,
+      "flying": 0,
+      "swift": 0,
+      "ranged": 0,
+      "ability_name": "Verteidigungs 'Stance'",
+      "ability_text": "During assault with adjactend unit the Hold Guardian may swap a single OFF die result over to DEF at the end of the roll phase"
     }
   ]
 }
