@@ -13,16 +13,16 @@ class Card extends Component {
                         <div id='dice'>
                             <div id='dice_offense' className='dice box left'>
                                 {this.dice(char.dice_defense, "orange", "left")}
-                                <h2 className="bump_text">{this.dice_bump(char.bump_offense)}</h2>
+                                <span className="bump_text">{Card.dice_bump(char.bump_offense)}</span>
                             </div>
 
                             <div id='dice_defense right' className='dice box right'>
-                                <h2 className="bump_text">{this.dice_bump(char.bump_defense)}</h2>
                                 {this.dice(char.dice_defense, "green", "right")}
+                                <span className="bump_text">{Card.dice_bump(char.bump_defense)}</span>
 
                             </div>
                         </div>
-                        <div className='frame-header'>
+                        <div className='frame-header name'>
                             <h1 className='name bigserif'>{char.name}</h1>
 
                         </div>
@@ -33,17 +33,17 @@ class Card extends Component {
                         </div>
 
 
-                        <div className='frame-type-line types'>
+                        <div className='frame-header types'>
                             <div id='types'>
+                            {/*<h2 className='types bigserif'><u>Rasse:</u> {char.race}, <u>Rang:</u> {char.rank}*/}
+                            {/*<br/><u>Fraktion:</u> {char.fraction}, <u>Zusatz:</u> {char.addition} </h2>*/}
+                                {Card.characterTypes(char)}
                             </div>
-                                <h2 className='types bigserif'>Rasse: {char.race}, Rang: {char.rank}, Fraktion: {char.fraction}, Zusatz: {char.addition} </h2>
-
-
                         </div>
 
                         <div className='frame-text-box'>
-                            <h3 className='abilityname'>Fähigkeit: "{char.ability_name}"</h3>
-                            <p className='abilitytext'>
+                            <h3 className='ability abilityname'>Fähigkeit: "{char.ability_name}"</h3>
+                            <p className='ability abilitytext'>
                                 {char.ability_text}
                             </p>
 
@@ -66,12 +66,20 @@ class Card extends Component {
             indents.push(<img className={"dice defense"} src={process.env.PUBLIC_URL + `img/${color}_die.ico`}/>);
         }
         return indents;
-    }
-    dice_bump(amount) {
+    };
+    static dice_bump(amount) {
         if (amount > 0) {
             return `+${amount}`
         } else return "";
-    }
+    };
+
+    static characterTypes(char) {
+        var types = `${char.race},${char.fraction}, ${char.rank}`;
+        if (char.addition)
+            types = types + `, ${char.addition}`
+        return <h2>{types}</h2>
+    };
 }
+
 
 export default Card;

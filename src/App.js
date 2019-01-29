@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Card.css';
 import './App.css';
 import Card from './Card';
 
@@ -26,7 +27,7 @@ class App extends Component {
         return (
 
             <React.Fragment>
-                <div className="cardoverview">
+                <page size="A4">
                 {
                     this.state.characters.map((character) => (
 
@@ -35,7 +36,7 @@ class App extends Component {
                     ))
 
                 }
-                </div>
+                </page>
             </React.Fragment>
 
         );
