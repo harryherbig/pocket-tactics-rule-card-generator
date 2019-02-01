@@ -1,23 +1,64 @@
-body {
-    background: rgb(204,204,204);
+html, body {
+    font-size: 16px;
 }
+
+@media print {
+    /*html, body {*/
+    /*width: 21cm;*/
+    /*height: 29.7cm;*/
+    /*}*/
+    body {
+        background: none;
+    }
+
+    page {
+
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 page {
-    width: 21cm;
-    height: 29.7cm;
+    width: 210mm;
+    height: 297mm;
     background: white;
-    display: block;
-    margin: 0 auto;
-    /*margin-top: 0.5cm;*/
-    /*margin-left: 0.5cm;*/
-    /*margin-right: 0.5cm;*/
-    /*margin-bottom: 0.5cm;*/
-    padding-top: 0.5cm;
-    padding-left: 0.5cm;
-    padding-right: 0.5cm;
-    padding-bottom: 0.5cm;
-    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+    /*padding-top: 0.5cm;*/
+    /*padding-left: 0.5cm;*/
+    /*padding-right: 0.5cm;*/
+    /*padding-bottom: 0.5cm;*/
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
+
+    /*margin-top: 0.5cm;*/
 
 }
+
+@media screen {
+    page {
+        padding-top: 0.5cm;
+        padding-left: 0.5cm;
+        padding-right: 0.5cm;
+        margin-bottom: 0.5cm;
+        border: 0.3em solid black;
+    }
+
+}
+
+third {
+    width: 33%;
+    height: 33%;
+    /*border-bottom: 0.2mm dashed black;*/
+    /*border-top: 0.2mm dashed black;*/
+    /*border-left: 0.2mm dashed black;*/
+
+    /*border-right: 0.2mm dashed black;*/
+}
+
+third:first-of-type {
+
+}
+
+
+

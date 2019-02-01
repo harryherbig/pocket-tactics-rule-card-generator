@@ -1,0 +1,153 @@
+@media print {
+
+}
+
+.card-container {
+
+}
+
+img {
+  max-height: 10em;
+  &.symbol {
+    max-height: 3em;
+  }
+}
+
+
+
+
+#dice {
+  display: flex;
+  height: 4em  ;
+}
+
+.dice.right {
+
+  justify-content: flex-end;
+  border-bottom: 1px solid black;
+}
+
+.dice.left {
+  justify-content: flex-start;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+div.dice {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+
+.card-container {
+  //width: 100%;
+  //height: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1mm solid black;
+
+  background: #171314;
+
+}
+
+.card-background {
+  margin: 0.2em 0.2em 0.2em 0.2em;
+  border-radius: 0.2em;
+  background-color: #bbb;
+}
+
+.bump_text {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.textbox {
+  background:
+          linear-gradient( 0deg, rgba(201, 216, 201, .3), rgba(201, 216, 209, .3) ),
+          url(https://image.ibb.co/jKByZn/tile_bg_1.jpg);
+
+  //padding: 0.2em;
+  display: flex;
+  border: 0.1em solid black;
+  margin: 0.3em;
+
+  &.ability {
+    display: block;
+    padding-top: 0.4em;
+    margin-top: 1em;
+  }
+
+
+}
+
+//.longtext {
+//  margin-left: 1em;
+//}
+
+div.name {
+  height: 3em;
+  display: flex;
+  justify-content: center;
+}
+
+span  {
+
+  &.name {
+    font-size: 2.3em;
+    font-weight: bold;
+  }
+  &.types {
+    margin: 0.1em;
+    font-size: 1.5em;
+    padding-left: 0.4em;
+  }
+  &.abilityname {
+    margin-left: 0.4em;
+    margin-top: 0.4em;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+}
+
+
+
+p.abilitytext {
+  margin: 0.4em;
+  font-size: 1.5em;
+}
+
+div.ability {
+  //padding-bottom: 1em;
+}
+
+
+
+
+
+.char-images {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+img.char-images {
+}
+
+img.favourite_terrain {
+  left: 1em;
+  z-index: 1;
+
+}
+
+
+card {
+  //max-width: 95%;
+  //max-height: 95%;
+  position: relative;
+  width: 6.2cm ;
+  height: 8cm;
+  font-size: 8px;
+  padding: 1cm;
+}

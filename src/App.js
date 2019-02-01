@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Card.css';
+import './Card.scss';
 import './App.css';
 import Card from './Card';
 
@@ -27,12 +27,12 @@ class App extends Component {
         return (
 
             <React.Fragment>
-                <page size="A4">
+                <page>
                 {
                     this.state.characters.map((character) => (
-
+                        <third>
                         <Card character={character}/>
-
+                        </third>
                     ))
 
                 }

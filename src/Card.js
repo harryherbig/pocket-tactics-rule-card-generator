@@ -7,11 +7,13 @@ class Card extends Component {
     render() {
         const char = this.props.character;
         return (
+            <card>
             <div className='card-container'>
                 <div className='card-background'>
                     <div className='card-frame'>
                         <div id='dice'>
                             <div id='dice_offense' className='dice box left'>
+                                <img className='offense symbol' src={process.env.PUBLIC_URL + 'img/icon-offense.png'}/>
                                 {this.dice(char.dice_defense, "orange", "left")}
                                 <span className="bump_text">{Card.dice_bump(char.bump_offense)}</span>
                             </div>
@@ -19,11 +21,11 @@ class Card extends Component {
                             <div id='dice_defense right' className='dice box right'>
                                 {this.dice(char.dice_defense, "green", "right")}
                                 <span className="bump_text">{Card.dice_bump(char.bump_defense)}</span>
-
+                                <img className='offense symbol' src={process.env.PUBLIC_URL + 'img/icon-defense.png'}/>
                             </div>
                         </div>
-                        <div className='frame-header name'>
-                            <h1 className='name bigserif'>{char.name}</h1>
+                        <div className='textbox name'>
+                            <span className='name'>{char.name}</span>
 
                         </div>
                         <div className='char-images'>
@@ -33,17 +35,13 @@ class Card extends Component {
                         </div>
 
 
-                        <div className='frame-header types'>
-                            <div id='types'>
-                            {/*<h2 className='types bigserif'><u>Rasse:</u> {char.race}, <u>Rang:</u> {char.rank}*/}
-                            {/*<br/><u>Fraktion:</u> {char.fraction}, <u>Zusatz:</u> {char.addition} </h2>*/}
+                        <div className='textbox types'>
                                 {Card.characterTypes(char)}
-                            </div>
                         </div>
 
-                        <div className='frame-text-box'>
-                            <h3 className='ability abilityname'>Fähigkeit: "{char.ability_name}"</h3>
-                            <p className='ability abilitytext'>
+                        <div className='textbox ability'>
+                            <span className='abilityname longtext'>Fähigkeit: "{char.ability_name}"</span>
+                            <p className='abilitytext longtext'>
                                 {char.ability_text}
                             </p>
 
@@ -55,7 +53,7 @@ class Card extends Component {
                 </div>
 
             </div>
-
+            </card>
         );
     }
 
@@ -63,7 +61,7 @@ class Card extends Component {
         var i = 0;
         var indents = [];
         while(i++ < amount) {
-            indents.push(<img className={"dice defense"} src={process.env.PUBLIC_URL + `img/${color}_die.ico`}/>);
+            indents.push(<img className={"dice symbol defense"} src={process.env.PUBLIC_URL + `img/${color}_die.ico`}/>);
         }
         return indents;
     };
@@ -74,10 +72,10 @@ class Card extends Component {
     };
 
     static characterTypes(char) {
-        var types = `${char.race},${char.fraction}, ${char.rank}`;
+        var types = `${char.race}, ${char.fraction}, ${char.rank}`;
         if (char.addition)
             types = types + `, ${char.addition}`
-        return <h2>{types}</h2>
+        return <span className="types">{types}</span>
     };
 }
 
