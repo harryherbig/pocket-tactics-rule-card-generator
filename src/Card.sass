@@ -1,0 +1,103 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Georgia', serif
+  font-size: 10px
+
+h2
+  font-size: 10px
+  padding: 2mm 5mm
+  font-weight: 700
+
+h3
+  font-size: 9px
+  margin-bottom: 5px
+  font-weight: 700
+
+span
+  font-size: 8px
+  font-weight: 400
+
+
+$card_height: 8cm
+$card_width: 6cm
+$card_margin: -($card_height * 0.5)
+
+.card
+  position: absolute
+  top: 50%
+  left: 50%
+  margin-top: $card_margin
+  margin-left: -3cm
+  padding: 10px
+  display: block
+  background: black
+  border-radius: 6px
+  width: $card_width
+  height: $card_height
+  border: 1px solid #e5e5e5
+
+  .diceline
+    display: flex
+    background: grey
+    padding: 2px
+
+  .dice_defense
+    display: flex
+    justify-content: flex-end
+    justify-items: center
+
+  .dicebox
+    width: $card_width / 2
+    display: flex
+    justify-items: flex-end
+
+  .dice
+    height: 10px
+
+  .bumptext
+    font-size: 12px
+    padding: 0 1px
+
+  .symbol
+    height: 15px
+
+  .char_image
+    height: 110px
+    padding: 2px
+
+  &:hover
+    cursor: pointer
+    box-shadow: 0 20px 80px rgba(0, 0, 0, .2)
+
+  .highlight
+    background: #f7f7f7
+    display: block
+
+    &.header
+      background: white
+
+  .image
+    background-image: linear-gradient(45deg, #605f6a 0%, #f3e9fa 99%, #f8f8fa 100%)
+    width: 100%
+    height: 40%
+    display: flex
+    justify-items: center
+    justify-content: center
+
+  .specs
+    background: linear-gradient( 0deg, rgba(201, 216, 201, .3), rgba(201, 216, 209, .3) ), url(https://image.ibb.co/jKByZn/tile_bg_1.jpg)
+    .spec
+      padding: 3.6mm 5mm
+      height: 2.6cm
+
+
+@media screen
+  .card
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .05)
+
+
+
+
+

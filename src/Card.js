@@ -1,70 +1,60 @@
 import React, {Component} from 'react';
+import './Card.sass'
 
 class Card extends Component {
     constructor(props) {
         super(props);
     }
+
     render() {
         const char = this.props.character;
         return (
-            <card>
-            <div className='card-container'>
-                <div className='card-background'>
-                    <div className='card-frame'>
-                        <div id='dice'>
-                            <div id='dice_offense' className='dice box left'>
-                                <img className='offense symbol' src={process.env.PUBLIC_URL + 'img/icon-offense.png'}/>
-                                {this.dice(char.dice_defense, "orange", "left")}
-                                <span className="bump_text">{Card.dice_bump(char.bump_offense)}</span>
-                            </div>
-
-                            <div id='dice_defense right' className='dice box right'>
-                                {this.dice(char.dice_defense, "green", "right")}
-                                <span className="bump_text">{Card.dice_bump(char.bump_defense)}</span>
-                                <img className='offense symbol' src={process.env.PUBLIC_URL + 'img/icon-defense.png'}/>
-                            </div>
-                        </div>
-                        <div className='textbox name'>
-                            <span className='name'>{char.name}</span>
-
-                        </div>
-                        <div className='char-images'>
-                            <img className='char char_image' src={process.env.PUBLIC_URL + 'img/dwarf.png'}/>
-                            <img className='favourite_terrain char_image'
-                                 src={process.env.PUBLIC_URL + 'img/plains_tile.png'}/>
-                        </div>
-
-
-                        <div className='textbox types'>
-                                {Card.characterTypes(char)}
-                        </div>
-
-                        <div className='textbox ability'>
-                            <span className='abilityname longtext'>Fähigkeit: "{char.ability_name}"</span>
-                            <p className='abilitytext longtext'>
-                                {char.ability_text}
-                            </p>
-
-
-                        </div>
-
+            <div className="card">
+                <div className='diceline'>
+                    <div id='dice_offense' className='dicebox left'>
+                        <img className='offense dice symbol' src={process.env.PUBLIC_URL + 'img/icon-offense.png'}/>
+                        {this.dice(char.dice_defense, "orange", "left")}
+                        <span className="bumptext">{Card.dice_bump(char.bump_offense)}</span>
                     </div>
+                    <div className='dice_defense dicebox right'>
+                        <span className="bumptext">{Card.dice_bump(char.bump_defense)}</span>
+                        {this.dice(char.dice_defense, "green", "right")}
+                        <img className='offense symbol' src={process.env.PUBLIC_URL + 'img/icon-defense.png'}/>
+                    </div>
+                </div>
+                <div className="highlight header">
+                    <h2>{char.name}</h2>
+                </div>
 
+                <div className="image" style={{backgroundImage: `url(${process.env.PUBLIC_URL + 'img/plains_tile.png'})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center"}}>
+                    <img className='char char_image' src={process.env.PUBLIC_URL + 'img/dwarf.png'}/>
+                </div>
+                <div className="highlight">
+                    <h2>{Card.characterTypes(char)}</h2>
+                </div>
+                <div className="specs">
+                    <div className="spec ">
+                        <h3 className='ability abilityname longtext'>Fähigkeit: "{char.ability_name}"</h3>
+                        <span className='ability abilitytext longtext'>
+                            {char.ability_text}
+                        </span>
+                    </div>
                 </div>
 
             </div>
-            </card>
         );
     }
 
     dice(amount, color, position) {
         var i = 0;
         var indents = [];
-        while(i++ < amount) {
-            indents.push(<img className={"dice symbol defense"} src={process.env.PUBLIC_URL + `img/${color}_die.ico`}/>);
+        while (i++ < amount) {
+            indents.push(<img className={"dice symbol defense"}
+                              src={process.env.PUBLIC_URL + `img/${color}_die.ico`}/>);
         }
         return indents;
     };
+
     static dice_bump(amount) {
         if (amount > 0) {
             return `+${amount}`
@@ -77,6 +67,8 @@ class Card extends Component {
             types = types + `, ${char.addition}`
         return <span className="types">{types}</span>
     };
+
+
 }
 
 

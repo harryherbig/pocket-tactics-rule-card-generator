@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import './Card.scss';
-import './App.css';
+import './App.sass';
 import Card from './Card';
 
 class App extends Component {
@@ -27,16 +26,18 @@ class App extends Component {
         return (
 
             <React.Fragment>
-                <page>
+                <section className="page">
+                    <ul>
                 {
                     this.state.characters.map((character) => (
-                        <third>
+                        <li>
                         <Card character={character}/>
-                        </third>
+                        </li>
                     ))
 
                 }
-                </page>
+                    </ul>
+                </section>
             </React.Fragment>
 
         );
