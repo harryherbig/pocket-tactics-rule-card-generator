@@ -7,7 +7,7 @@
 
 h2
   font-size: 10px
-  padding: 2mm 5mm
+  padding: 2mm 2mm
   font-weight: 700
 
 h3
@@ -61,7 +61,7 @@ $card_margin: -($card_height * 0.5)
     padding: 0 1px
 
   .symbol
-    height: 25px
+    height: 20px
 
   .char_image
     height: 110px
@@ -73,7 +73,7 @@ $card_margin: -($card_height * 0.5)
 
   .highlight
     background: #f7f7f7
-    display: block
+    display: flex
 
     &.header
       background: white
@@ -84,13 +84,21 @@ $card_margin: -($card_height * 0.5)
     height: 40%
     display: flex
     justify-items: center
-    justify-content: center
+    justify-content: flex-start
 
   .specs
     background: linear-gradient( 0deg, rgba(201, 216, 201, .3), rgba(201, 216, 209, .3) ), url(https://image.ibb.co/jKByZn/tile_bg_1.jpg)
     .spec
-      padding: 3.6mm 5mm
-      height: 2.3cm
+      padding: 2.2mm 2mm
+      height: 2cm
+
+  .movement
+    height: 0.4cm
+    display: flex
+    justify-content: flex-end
+    padding-right: 2mm
+    background: linear-gradient( 0deg, rgba(201, 216, 201, .3), rgba(201, 216, 209, .3) ), url(https://image.ibb.co/jKByZn/tile_bg_1.jpg)
+
 
 
 @media screen

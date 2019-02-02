@@ -26,23 +26,38 @@ class Card extends Component {
                     <h2>{char.name}</h2>
                 </div>
 
-                <div className="image" style={{backgroundImage: `url(${process.env.PUBLIC_URL + 'img/plains_tile.png'})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center"}}>
+                <div className="image" style={{
+                    backgroundImage: `url(${this.terrain(char.favourite_tile)})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center center"
+                }}>
                     <img className='char char_image' src={process.env.PUBLIC_URL + 'img/dwarf.png'}/>
                 </div>
                 <div className="highlight">
                     <h2>{Card.characterTypes(char)}</h2>
                 </div>
                 <div className="specs">
-                    <div className="spec ">
-                        <h3 className='ability abilityname longtext'>Fähigkeit: "{char.ability_name}"</h3>
+                    <div className="spec">
+                        <h3 className='ability abilityname longtext'>{char.ability_name}</h3>
                         <span className='ability abilitytext longtext'>
                             {char.ability_text}
                         </span>
+
                     </div>
+                    <div className="movement">
+                        {this.movement(char)}
+                    </div>
+
                 </div>
 
             </div>
         );
+    }
+
+
+    terrain(terrain) {
+        return process.env.PUBLIC_URL + `img/tile_${terrain}.png`
     }
 
     dice(amount, color, position) {
@@ -62,10 +77,31 @@ class Card extends Component {
     };
 
     static characterTypes(char) {
-        var types = `${char.race}, ${char.fraction}, ${char.rank}`;
+        var types = `${char.race}, ${char.rank}`;
         if (char.addition)
-            types = types + `, ${char.addition}`
+            types = types + `, ${char.addition}`;
+        if (char.living)
+            types = types + ", lebend";
+        else
+            types = types + ", untot";
+        if (char.type) {
+            types = types + `, ${char.type}`;
+        }
         return <span className="types">{types}</span>
+    };
+
+    movement(char) {
+        var movediv = "";
+        if (char.flying > 0) {
+            movediv = movediv + "Flug: +" + char.flying
+        } else if (char.swift > 0) {
+            movediv = movediv + "Swift: +" + char.swift
+        } else if (char.ranged > 0) {
+            movediv = movediv + "Range: +" + char.ranged
+        } else {
+            return "";
+        }
+        return <span>{movediv}</span>;
     };
 
 
