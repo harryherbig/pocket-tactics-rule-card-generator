@@ -13,6 +13,7 @@ The CSS is optimized for printing 9 Cards on 1 DIN A4 page.
 Just add new units or terrain to the db.json and they will be rendered automatically
 
 
+## This is a React Application 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
