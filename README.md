@@ -9,6 +9,7 @@ https://www.thingiverse.com/dutchmogul/collections/4th-edition-pocket-tactics
 The data in the json and template Wordings are in German. 
 It currently covers the Core Set 1 and 2 from the 4th Edition of Pocket Tactics.
 The CSS is optimized for printing 9 Cards on 1 DIN A4 page.
+The Game Rules are also available in german in the file `Pocket Tactics Regeln deutsch.pdf`
 
 ## How to extend?
 Just add new units or terrain to the db.json and they will be rendered automatically
