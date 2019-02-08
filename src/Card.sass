@@ -5,24 +5,31 @@
   font-family: 'Georgia', serif
   font-size: 10px
 
-h2
-  font-size: 10px
-  padding: 2mm 2mm
+h1
+  font-size: 12px
+  padding-left: 2mm
+  padding-bottom: 1.2mm
+  padding-top: 1.2mm
   font-weight: 700
 
+h2
+  font-size: 11px
+  padding-bottom: 1mm
+
 h3
-  font-size: 9px
-  margin-bottom: 5px
+  font-size: 7.9px;
+  padding: 1.2mm 1.2mm;
   font-weight: 700
 
 span
-  font-size: 8px
+  font-size: 9px
   font-weight: 400
 
-
-$card_height: 8cm
+$card_height: 9cm
 $card_width: 6cm
 $card_margin: -($card_height * 0.5)
+
+$header_height: 10mm
 
 .card
   position: absolute
@@ -40,46 +47,84 @@ $card_margin: -($card_height * 0.5)
 
   .diceline
     display: flex
-    background: grey
+    background: #2b2929
     padding: 2px
+    color: white
 
   .dice_defense
     display: flex
     justify-content: flex-end
     justify-items: center
 
+  .black
+    filter: invert(100%)  contrast(100)
   .dicebox
     width: $card_width / 2
     display: flex
     justify-items: flex-end
+    padding-bottom: 0.2mm
 
   .dice
     height: 10px
 
   .bumptext
-    font-size: 12px
-    padding: 0 1px
+    font-size: 13.5px
+    padding-top: 1mm
+    font-family: monospace, sans-serif
 
   .symbol
-    height: 20px
+    height: 23px
+  .dice.symbol
+    height: 23px
+  .right
+    .dice.symbol
+      margin-left: -1.1mm
+    .bumptext
+      padding-right: 1.3mm
+  .left
+    .dice.symbol
+      margin-right: -1.1mm
+    .bumptext
+      padding-left: 1mm
+  .offense.symbol
+    padding-right: 1mm
 
   .char_image
     height: 110px
-    padding: 2px
+    margin-left: -40px
+    filter: contrast(200%) invert(10%) sepia(66%) hue-rotate(100deg)
+
+  .favourite_terrain
+    filter: contrast(90%) invert(20%) sepia(50%) hue-rotate(344deg)
 
   &:hover
     cursor: pointer
     box-shadow: 0 20px 80px rgba(0, 0, 0, .2)
 
   .highlight
-    background: #f7f7f7
+    background: darkgrey
     display: flex
+    align-items: center
+    text-align: center
+    vertical-align: middle
 
     &.header
-      background: white
+      background: dimgray
+      color: white
+      height: $header_height
+
+  .char_images
+    background: #434346
+    display: flex
+    justify-content: space-evenly
+
+
+  .favourite_terrain
+    max-height: 3cm
+    max-width: 4cm
+    //margin-right: -1.15cm
 
   .image
-    background-image: linear-gradient(45deg, #605f6a 0%, #f3e9fa 99%, #f8f8fa 100%)
     width: 100%
     height: 40%
     display: flex
@@ -87,17 +132,44 @@ $card_margin: -($card_height * 0.5)
     justify-content: flex-start
 
   .specs
-    background: linear-gradient( 0deg, rgba(201, 216, 201, .3), rgba(201, 216, 209, .3) ), url(https://image.ibb.co/jKByZn/tile_bg_1.jpg)
     .spec
-      padding: 2.2mm 2mm
-      height: 2cm
+      padding-left: 2.2mm
+      padding-right: 2.2mm
+      padding-top: 2mm
+      height: 2.4cm
+
+  .descriptionbackground
+    background: linear-gradient( 0deg, rgba(201, 216, 201, .3), rgba(201, 216, 209, .3) ), url(https://image.ibb.co/jKByZn/tile_bg_1.jpg)
+    min-height: 3.2cm
+
+    //height: 3cm
+  .bottomText
+    display: flex
+    justify-items: flex-end
+    justify-content: flex-end
+    height: 14mm
+    margin-top: -8mm
 
   .movement
-    height: 0.4cm
+    //height: 0.4cm
     display: flex
     justify-content: flex-end
-    padding-right: 2mm
-    background: linear-gradient( 0deg, rgba(201, 216, 201, .3), rgba(201, 216, 209, .3) ), url(https://image.ibb.co/jKByZn/tile_bg_1.jpg)
+    padding-right: 1mm
+    font-weight: bold
+    align-self: flex-end
+    span
+      font-size: 20px
+      font-weight: bold
+    .swift
+      height: 8mm
+      width: 8mm
+    img
+      height: 7mm
+      width: 6.3mm
+      padding-bottom: 1mm
+  img.rolladice
+    height: 14mm
+    display: inline-block
 
 
 
