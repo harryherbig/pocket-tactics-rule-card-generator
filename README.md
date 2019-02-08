@@ -6,6 +6,7 @@ https://www.thingiverse.com/dutchmogul/collections/4th-edition-pocket-tactics
 ![alt text](screenshot.png "Logo Title Text 1")
 
 ## Feature Set
+The data in the json and template Wordings are in German. 
 It currently covers the Core Set 1 and 2 from the 4th Edition of Pocket Tactics.
 The CSS is optimized for printing 9 Cards on 1 DIN A4 page.
 
